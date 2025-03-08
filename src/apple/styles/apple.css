@@ -1,0 +1,109 @@
+@import "./reset.css";
+@import "./theme.css";
+@import "./base.css";
+@import "card-component.css";
+
+/* 그리드 컨테이너 */
+.product-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 그리드 레이아웃 */
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+/* 다크 테마 적용 제품 */
+.iphone15-pro .card-content,
+.ipad-pro .card-content,
+.airpods-pro .card-content,
+.apple-watch .card-content {
+  color: var(--white);
+}
+
+.iphone15-pro .card-subtitle,
+.ipad-pro .card-subtitle,
+.airpods-pro .card-subtitle,
+.apple-watch .card-subtitle {
+  color: var(--white);
+  opacity: 0.8;
+}
+
+/* 제품별 배경 이미지 설정 */
+.iphone15-pro {
+  background-image: url("../products/iphone15_pro.jpeg");
+  background-color: var(--black);
+}
+
+.iphone15 {
+  background-image: url("../products/iphone15.jpeg");
+}
+
+.ipad-pro {
+  background-image: url("../products/ipad_pro.jpeg");
+}
+
+.ipad-air {
+  background-image: url("../products/ipad_air.jpeg");
+}
+
+.apple-watch {
+  background-image: url("../products/apple_watch.jpeg");
+  background-color: var(--black);
+}
+
+.airpods-pro {
+  background-image: url("../products/airpods_pro.jpeg");
+}
+
+.macbook-air {
+  background-image: url("../products/macbook_air.jpeg");
+}
+
+
+/* 1024px 이상 */
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 2열 차지 제품들 */
+  .iphone15-pro,
+  .ipad-pro,
+  .ipad-air {
+    grid-column: span 2;
+  }
+
+  /* 2x 해상도 이미지 적용 */
+  .iphone15-pro {
+    background-image: url("../products/iphone15_pro_2x.jpeg");
+  }
+
+  .iphone15 {
+    background-image: url("../products/iphone15.jpeg");
+  }
+
+  .ipad-pro {
+    background-image: url("../products/ipad_pro_2x.jpeg");
+  }
+
+  .ipad-air {
+    background-image: url("../products/ipad_air_2x.jpeg");
+  }
+
+  .apple-watch {
+    background-image: url("../products/apple_watch_2x.jpeg");
+  }
+
+  .airpods-pro {
+    background-image: url("../products/airpods_pro_2x.jpeg");
+  }
+
+  .macbook-air {
+    background-image: url("../products/macbook_air_2x.jpeg");
+  }
+}

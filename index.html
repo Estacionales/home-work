@@ -1,99 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTML/CSS 과제</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Noto Sans KR", sans-serif;
-        background-color: #f5f5f5;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-      }
-
-      .profile-card {
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        padding: 2rem;
-        width: 300px;
-        text-align: center;
-      }
-
-      .profile-image {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        margin-bottom: 1.5rem;
-        object-fit: cover;
-        border: 5px solid #f0f0f0;
-      }
-
-      .name {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 0.5rem;
-      }
-
-      .bio {
-        color: #666;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-      }
-
-      .homework-links {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .homework-links a {
-        color: #555;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .homework-links a:hover {
-        color: #007bff;
-      }
-    </style>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NSH</title>
+  <link rel="stylesheet" href="./index-style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
     <div class="profile-card">
-      <img src="./src/assets/images/maple.png" alt="" class="profile-image" />
-      <h1 class="name">남상호</h1>
-      <p class="bio">멋쟁이 사자처럼 프론트엔드 부트캠프 13기 남상호 입니다.</p>
-      <p>과제 결과는 링크를 선택해주세요.</p>
-      <ul class="homework-links">
-        <li><a href="./src/md/markdown.md">마크다운 문법</a></li>
-        <br />
-        <li><a href="./src/md/retrospect.md">1~2주차 회고</a></li>
-        <br />
-        <li><a href="./src/avatars/avatars.html">Avatars</a></li>
-        <br />
-        <li><a href="./src/avatars/avatars.md">3주차 회고</a></li>
-        <br />
-        <li><a href="./src/login/login.html">네이버 로그인</a></li>
-        <br />
-        <li><a href="./src/login/login.md">4주차 회고</a></li>
-      </ul>
+      <div class="profile-header">
+        <img src="./src/assets/images/maple.png" alt="프로필 이미지" class="profile-image" />
+        <h1 class="name">남상호</h1>
+        <p class="bio">멋쟁이 사자처럼 프론트엔드 부트캠프 13기</p>
+      </div>
+      
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="assignments">과제</button>
+        <button class="tab-btn" data-tab="retrospects">회고</button>
+      </div>
+      
+      <div class="tab-content">
+        <!-- 과제 섹션 -->
+        <div class="tab-pane active" id="assignments">
+          <div class="homework-container">
+            <h2>과제 목록</h2>
+            <div class="homework-grid">
+              <a href="./src/md/markdown.md" class="homework-card">
+                <i class="fas fa-file-alt"></i>
+                <span>마크다운 문법</span>
+              </a>
+              
+              <a href="./src/avatars/avatars.html" class="homework-card">
+                <i class="fas fa-user-circle"></i>
+                <span>Avatars</span>
+              </a>
+              
+              <a href="./src/login/login.html" class="homework-card">
+                <i class="fas fa-sign-in-alt"></i>
+                <span>네이버 로그인</span>
+              </a>
+              
+              <a href="./src/apple/apple.html" class="homework-card">
+                <i class="fab fa-apple"></i>
+                <span>Apple</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 회고 섹션 -->
+        <div class="tab-pane" id="retrospects">
+          <div class="homework-container">
+            <h2>회고 목록</h2>
+            <div class="homework-grid">
+              <a href="./src/md/retrospect.md" class="homework-card retrospect">
+                <i class="fas fa-book"></i>
+                <span>1~2주차 회고</span>
+              </a>
+              
+              <a href="./src/avatars/avatars.md" class="homework-card retrospect">
+                <i class="fas fa-book"></i>
+                <span>3주차 회고</span>
+              </a>
+              
+              <a href="./src/login/login.md" class="homework-card retrospect">
+                <i class="fas fa-book"></i>
+                <span>4주차 회고</span>
+              </a>
+              
+              <a href="./src/apple/apple.md" class="homework-card retrospect">
+                <i class="fas fa-book"></i>
+                <span>5주차 회고</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </body>
+  </div>
+
+  <script>
+    // 탭 전환 기능
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+    
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // 모든 버튼에서 active 클래스 제거
+        tabBtns.forEach(b => b.classList.remove('active'));
+        // 클릭된 버튼에 active 클래스 추가
+        btn.classList.add('active');
+        
+        // 모든 탭 패널 숨기기
+        tabPanes.forEach(pane => pane.classList.remove('active'));
+        // 선택된 탭 패널 보이기
+        const tabId = btn.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+  </script>
+</body>
 </html>
